@@ -6,7 +6,7 @@ public class Game
 	public static void main(String[] args) 
 	{     
 		HelperFunction gameobj=new HelperFunction();   
-		List<Card> deck = new ArrayList<>();
+		List<Card> Deck = new ArrayList<>();
 		gamer1 play1 = new gamer1();
 		gamer2 play2 = new gamer2();
 		Deck=gameobj.startReStart(Deck,play1,play2);
