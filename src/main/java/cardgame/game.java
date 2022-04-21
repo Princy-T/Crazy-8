@@ -6,10 +6,10 @@ public class Game
 	public static void main(String[] args) 
 	{     
 		HelperFunction gameobj=new HelperFunction();   
-		List<Card> Deck = new ArrayList<>();
+		List<Card> deck = new ArrayList<>();
 		gamer1 play1 = new gamer1();
 		gamer2 play2 = new gamer2();
-		Deck=gameobj.startReStart(Deck,play1,play2);
-		gameobj.gamePlay(Deck, play1, play2);  
+		deck=gameobj.startReStart(deck,play1,play2);
+		gameobj.gamePlay(deck, play1, play2);  
 	}
 }
