@@ -77,16 +77,17 @@ public class HelperFunction
 	 * After each gamer receives seven cards,the number of cards will be reduced from deck.
 	 */
 	
-	List<Card> startReStart(List<Card> deck, gamer1 play1, gamer2 play2) 
+	List<Card> startReStart(List<Card> deckCard, gamer1 play1, gamer2 play2) 
 	{
+		List<Card> deck = deckCard;
 		deck = Card.getDeck();
-		Collections.shuffle(Deck);
+		Collections.shuffle(deck);
 		List<Card>gamer1 = new ArrayList<>();
 		List<Card>gamer2 = new ArrayList<>();
 		for(int i=0;i<14;i++)
 		{
 			if(i%2==1)
-				gamer1.add(Deck.get(0));
+				gamer1.add(deck.get(0));
 			else
 				gamer2.add(Deck.get(0));
 			Deck.remove(0);
