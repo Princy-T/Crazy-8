@@ -1,6 +1,6 @@
 package cardgame;
 import java.util.List;
-public class gamer1 implements PlayerStrategy
+public class Gamer1 implements PlayerStrategy
 {
 	List<Card> gamer1Cards;
 	Card topCard;
@@ -41,9 +41,9 @@ public class gamer1 implements PlayerStrategy
 	}
 	public void receiveCard(Card drawnCard) 
 	{
-		System.out.println("Gamer2 recieved from Deck:"+drawnCard.getRank()+" "+drawnCard.getSuit());
+		logger.log("Gamer2 recieved from Deck:"+drawnCard.getRank()+" "+drawnCard.getSuit());
 		gamer1Cards.add(drawnCard);
-		System.out.println(" ");
+		logger.log(" ");
 	}
 	public Card playCard() 
 	{
@@ -60,7 +60,7 @@ public class gamer1 implements PlayerStrategy
 						max=gamer1Cards.get(i).getRank().ordinal();
 						finalCard=gamer1Cards.get(i);
 					}
-					System.out.println("Gamer1 placed: "+finalCard.getRank()+" "+finalCard.getSuit());
+					logger.log("Gamer1 placed: "+finalCard.getRank()+" "+finalCard.getSuit());
 					finalCard=gamer1Cards.get(i);
 					gamer1Cards.remove(finalCard);
 					break;
@@ -73,7 +73,7 @@ public class gamer1 implements PlayerStrategy
 			{
 				if(gamer1Cards.get(i).getSuit().equals(changedSuit)) 
 				{
-					System.out.println("Gamer1 placed: "+gamer1Cards.get(i).getRank()+" "+gamer1Cards.get(i).getSuit());
+					logger.log("Gamer1 placed: "+gamer1Cards.get(i).getRank()+" "+gamer1Cards.get(i).getSuit());
 					finalCard=gamer1Cards.get(i);
 					gamer1Cards.remove(i);
 					break;
@@ -84,7 +84,6 @@ public class gamer1 implements PlayerStrategy
 	}
 	public Card.Suit declareSuit()
 	{
-		// TODO Auto-generated method stub
 		int max=Card.Rank.ACE.ordinal();
 		Card.Suit declareSuit=null;
 		for(int i=0;i<gamer1Cards.size();i++) 
@@ -95,8 +94,8 @@ public class gamer1 implements PlayerStrategy
 				declareSuit=gamer1Cards.get(i).getSuit();
 			}
 		}
-		System.out.println("SUIT declared : "+declareSuit);
-		System.out.println(" ");
+		logger.log("SUIT declared : "+declareSuit);
+		logger.log(" ");
 		return declareSuit;
 	}
 	public void processOpponentActions(List<PlayerTurn> opponentActions) 
