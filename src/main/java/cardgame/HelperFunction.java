@@ -79,7 +79,7 @@ public class HelperFunction
 	
 	List<Card> startReStart(List<Card> Deck, gamer1 play1, gamer2 play2) 
 	{
-		Deck = Card.getDeck();
+		let Deck = Card.getDeck();
 		Collections.shuffle(Deck);
 		List<Card>gamer1 = new ArrayList<>();
 		List<Card>gamer2 = new ArrayList<>();
