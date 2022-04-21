@@ -92,8 +92,7 @@ public class HelperFunction
 				gamer1.add(deck.get(0));
 			else
 				gamer2.add(deck.get(0));
-			deck.remove(i);
-			i--;
+			deck.remove(0);
 		}
 		/*
 		 *getting the cards from the gamers.
