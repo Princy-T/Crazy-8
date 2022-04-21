@@ -169,6 +169,7 @@ public class HelperFunction
 			{
 				declareCard=play1.declareSuit();
 			}
+			
 			return 0;
 		}
 		
