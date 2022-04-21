@@ -2,7 +2,7 @@ package cardgame;
 
 import java.util.List;
 
-public class gamer2 implements PlayerStrategy{
+public class Gamer2 implements PlayerStrategy{
 	List<Card> gamer2Cards;
 	Card topCard;
 	Card.Suit changedSuit;
@@ -34,16 +34,17 @@ public class gamer2 implements PlayerStrategy{
 		
 	}
 	public void receiveCard(Card drawnCard) {
-		System.out.println("Gamer2 recieved from Deck:"+drawnCard.getRank()+" "+drawnCard.getSuit());
+		logger.log("Gamer2 recieved from Deck:"+drawnCard.getRank()+" "+drawnCard.getSuit());
 		gamer2Cards.add(drawnCard);
-		System.out.println(" ");
+		logger.log(" ");
 	}
 	
 	
 	
 	
 	public Card playCard() {
-		int max=0,count=0;
+		int max=0;
+		int count=0;
 		Card finalCard=null;
 		if(changedSuit==null) {
 			for(int i=0;i<gamer2Cards.size();i++) {
@@ -79,8 +80,8 @@ public class gamer2 implements PlayerStrategy{
 				}
 			}
 		}
-		System.out.println("Gamer2 placed: "+finalCard.getRank()+" "+finalCard.getSuit());
-		System.out.println(" ");
+		logger.log("Gamer2 placed: "+finalCard.getRank()+" "+finalCard.getSuit());
+		logger.log(" ");
 		gamer2Cards.remove(finalCard);
 		return finalCard;
 }
@@ -89,7 +90,6 @@ public class gamer2 implements PlayerStrategy{
 	
 	
 	public Card.Suit declareSuit(){
-		// TODO Auto-generated method stub
 				int max=Card.Rank.KING.ordinal();
 				Card.Suit declareSuit=null;
 				for(int i=0;i<gamer2Cards.size();i++) {
@@ -98,8 +98,8 @@ public class gamer2 implements PlayerStrategy{
 						declareSuit=gamer2Cards.get(i).getSuit();
 					}
 				}
-				System.out.println("SUIT declared: "+declareSuit);
-				System.out.println(" ");
+				logger.log("SUIT declared: "+declareSuit);
+				logger.log(" ");
 				return declareSuit;
 
 		
