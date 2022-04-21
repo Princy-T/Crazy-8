@@ -13,12 +13,14 @@ public class HelperFunction
 	 * */
 	void gamePlay(List<Card> deck,gamer1 play1,gamer2 play2) 
 	{
-		int i,grade1=0,grade2=0;
+		int i;
+		int grade1=0;
+		int grade2=0;
 		Card.Suit declareCard=null;
 		Card topCard;
 		topCard=deck.get(0);
-		System.out.println("Top card has: "+topCard.getRank()+" "+topCard.getSuit());
-		System.out.println(" ");
+		logger.log("Top card has: "+topCard.getRank()+" "+topCard.getSuit());
+		logger.log(" ");
 		deck.remove(0);
 		int temp=1;
 		while(grade1<200 && grade2<200)
@@ -44,14 +46,14 @@ public class HelperFunction
 			 if(play1.gamer1Cards.isEmpty() ||deck.isEmpty()) 
 			 {
 				 grade2=play2.getScore(grade2);
-				 System.out.println(" ");
-				 System.out.println("Gamer2 scores:"+grade2);
+				 logger.log(" ");
+				 logger.log("Gamer2 scores:"+grade2);
 			 }
 			 if(play2.gamer2Cards.isEmpty() ||deck.isEmpty()) 
 			 {
 				 grade1=play1.getScore(grade1);
-				 System.out.println("Gamer1 scores:"+grade1);
-				 System.out.println(" ");
+				 logger.log("Gamer1 scores:"+grade1);
+				 logger.log(" ");
 			 }
 			 if(deck.isEmpty()) 
 			 {
@@ -61,14 +63,14 @@ public class HelperFunction
 		}
 		if(grade2>=200) 
 		{
-			System.out.println("Gamer2 wins");
+			logger.log("Gamer2 wins");
 		}
 		else if(grade1>=200) 
 		{
-			System.out.println("Gamer1 wins");
+			logger.log("Gamer1 wins");
 		}
-		System.out.println(" ");
-		System.out.println("GAME END...");
+		logger.log(" ");
+		logger.log("GAME END...");
 	}
 	/*
 	 * declaring array list for gamer1,gamer2.
@@ -91,6 +93,7 @@ public class HelperFunction
 			else
 				gamer2.add(deck.get(0));
 			deck.remove(i);
+			i--;
 		}
 		/*
 		 *getting the cards from the gamers.
@@ -99,22 +102,22 @@ public class HelperFunction
 		play1.receiveInitialCards(gamer1);
 		play2.receiveInitialCards(gamer2);
 		int i;
-		System.out.println("Gamer1 has:");
+		logger.log("Gamer1 has:");
 		for(i=0;i<7;i++)
 		{
-			System.out.print(gamer1.get(i).getRank()+" "+gamer1.get(i).getSuit()+" ");
-			System.out.println(" ");
+			logger.log(gamer1.get(i).getRank()+" "+gamer1.get(i).getSuit()+" ");
+			logger.log(" ");
 		}
-		System.out.println("____________________");
-		System.out.println(" ");
-		System.out.println("Gamer2 has:");
+		logger.log("____________________");
+		logger.log(" ");
+		logger.log("Gamer2 has:");
 		for(i=0;i<7;i++) 
 		{
-			  System.out.print(gamer2.get(i).getRank()+" "+gamer2.get(i).getSuit()+" ");
-			  System.out.println(" ");
+			  logger.log(gamer2.get(i).getRank()+" "+gamer2.get(i).getSuit()+" ");
+			  logger.log(" ");
 		}
-		System.out.println("____________________");
-		System.out.println();
+		logger.log("____________________");
+		logger.log();
 		return deck;
 	}
 	/*
@@ -136,8 +139,8 @@ public class HelperFunction
 		else 
 		{
 			topCard=play2.playCard();
-			System.out.println("Top card has: "+topCard.getRank()+" "+topCard.getSuit());
-			System.out.println(" ");
+			logger.log("Top card has: "+topCard.getRank()+" "+topCard.getSuit());
+			logger.log(" ");
 			if(topCard.getRank()==Card.Rank.EIGHT) 
 			{
 				declareCard=play2.declareSuit();
@@ -160,9 +163,9 @@ public class HelperFunction
 		else 
 		{
 			topCard=play1.playCard();
-			System.out.println(" ");
-			System.out.println("Top card has: "+topCard.getRank()+" "+topCard.getSuit());
-			System.out.println(" ");
+			logger.log(" ");
+			logger.log("Top card has: "+topCard.getRank()+" "+topCard.getSuit());
+			logger.log(" ");
 			if(topCard.getRank().equals(Card.Rank.EIGHT)) 
 			{
 				declareCard=play1.declareSuit();
