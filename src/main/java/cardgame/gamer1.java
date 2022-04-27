@@ -5,10 +5,10 @@ public class Gamer1 implements PlayerStrategy
 	List<Card> gamer1Cards;
 	Card topCard;
 	Card.Suit changedSuit;
-	public void init(int playerId, List<Integer> opponentIds) 
-	{
+// 	public void init(int playerId, List<Integer> opponentIds) 
+// 	{
 		
-	}
+// 	}
 	public void receiveInitialCards(List<Card> cards) 
 	{
 		this.gamer1Cards=cards;		
@@ -98,14 +98,14 @@ public class Gamer1 implements PlayerStrategy
 		logger.log(" ");
 		return declareSuit;
 	}
-	public void processOpponentActions(List<PlayerTurn> opponentActions) 
-	{
+// 	public void processOpponentActions(List<PlayerTurn> opponentActions) 
+// 	{
 		
-	}
-	public void reset() 
-	{
+// 	}
+// 	public void reset() 
+// 	{
 		 
-	}
+// 	}
 	@Override
 	public int getScore(int grade) 
 	{
