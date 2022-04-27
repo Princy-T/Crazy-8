@@ -25,7 +25,7 @@ public interface PlayerStrategy {
      * @param playerId    The id for this player, assigned by the game engine
      * @param opponentIds A list of ids for this player's opponents
      */
-    void init(int playerId, List<Integer> opponentIds);
+    //void init(int playerId, List<Integer> opponentIds);
 
     /**
      * Called once at the beginning of o game to deal the player their initial cards.
@@ -81,7 +81,7 @@ public interface PlayerStrategy {
      *
      * @param opponentActions A list of what the opponents did on each of their turns
      */
-    void processOpponentActions(List<PlayerTurn> opponentActions);
+    //void processOpponentActions(List<PlayerTurn> opponentActions);
 
     /**
      * Returns the score of each player
@@ -91,5 +91,5 @@ public interface PlayerStrategy {
     /**
      * Called before a game begins, to allow for resetting any state between games.
      */
-    void reset();
+    //void reset();
 }
